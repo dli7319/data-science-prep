@@ -1,0 +1,21 @@
+<meta charset="utf-8">
+A and B are playing the following game: a number k from 1-6 is chosen, and A and B will toss a die until the first person sees the side k, and that person gets $100. How much is A willing to pay to play first in this game?
+
+We will assume the dice is fair.<br>
+We can model this using a geometric distribution.<br>
+The probability of winning if you're going first is <br>
+
+$\begin{align}
+\sum_{i~odd}^{\infty}(5/6)^{i-1}(1/6)
+&= (1/6)(1 + (5/6)^2 + (5/6)^4 + ...)\\
+&= (1/6)\sum_{i=0}^{\infty}((5/6)^2)^i \\
+&= (1/6)\frac{1}{1-(5/6)^2}\\
+&= (1/6)\frac{6^2}{6^2-5^2}\\
+&= \frac{6}{36-25}\\
+&= \frac{6}{11}
+\end{align}$
+
+Thus the expected winnings of the person going first is $100 * (\frac{6}{11}) \approx 54.55$ dollars.<br>
+It follows that A would pay up to $4.55 to go first.
+
+<!-- Markdeep: --><style class="fallback">body{visibility:hidden;white-space:pre;font-family:monospace}</style><script src="markdeep.min.js" charset="utf-8"></script><script src="https://casual-effects.com/markdeep/latest/markdeep.min.js" charset="utf-8"></script><script>window.alreadyProcessedMarkdeep||(document.body.style.visibility="visible")</script>
