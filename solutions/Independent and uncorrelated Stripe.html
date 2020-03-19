@@ -1,0 +1,29 @@
+<meta charset="utf-8">
+Say we have two random variables X and Y.
+What does it mean for X and Y to be independent?
+What about uncorrelated?
+Give an example where X and Y are uncorrelated but not independent.
+<br>
+
+Independent means knowing the value of one random variable does not give you any information about the other.<br>
+I.e. $P_{X|Y}(x|y) = P_{X}(x)$<br>
+
+Uncorrelated means that there is no linear relationship between X and Y.<br>
+I.e. $\rho = \frac{Cov(X,Y)}{\sqrt{Var(X)Var(Y)}} = 0$ or equivalently $Cov(X,Y) = 0$
+
+The classic example is $X \sim N(0,1)$ and $Y=X^3$.<br>
+Clearly knowing $X$ gives you $Y$ so this is not independent.<br>
+Or knowing $Y$ changes the distribution of $X$.<br>
+We can show that this is uncorrelated by showing $Cov(X,Y)=0$.<br>
+$\begin{aligned}
+Cov(X,Y) &= Cov(X,X^2)\\
+&= E[(X-E(X))(X^2-E(X^2))]\\
+&= E[X^3]-E[X]E[X^2]\\
+&= E[X^3]\\
+&= \int_{-\infty}^{\infty}x^3p(x)\\
+&= \int_{-\infty}^{0}x^3p(x) + \int_{0}^{\infty}x^3p(x)\\
+&= -\int_{0}^{\infty}x^3p(x) + \int_{0}^{\infty}x^3p(x) \text{ by Symmetry}\\
+&= 0
+\end{aligned}$
+
+<!-- Markdeep: --><style class="fallback">body{visibility:hidden;white-space:pre;font-family:monospace}</style><script src="markdeep.min.js" charset="utf-8"></script><script src="https://casual-effects.com/markdeep/latest/markdeep.min.js" charset="utf-8"></script><script>window.alreadyProcessedMarkdeep||(document.body.style.visibility="visible")</script>
